@@ -8,16 +8,18 @@ function crearUsuario() {
   // {{nombre}} debe ser el nombre definido en cada instancia
   // Devuelve la clase
   // Tu código:
-  function Usuario(opciones){
-    this.usuario = opciones.usuario;
-    this.nombre = opciones.nombre;
-    this.email = opciones.email;
-    this.password = opciones.password;
+  class Usuario {
+    constructor(opciones) {
+      this.usuario = opciones.usuario;
+      this.nombre = opciones.nombre;
+      this.email = opciones.email;
+      this.password = opciones.password;
+    }
+    saludar() {
+      return 'Hola, mi nombre es ' + this.nombre;
+    }
   }
     
-  Usuario.prototype.saludar = function() { 
-    return 'Hola, mi nombre es ' + this.nombre;
-  };
   return Usuario;
 }
 
@@ -92,7 +94,7 @@ function agregarMetodo() {
   Persona.prototype.datos = function() {
   return this.nombre + ", " + this.edad + " años";
   }
-  
+}
 
 // No modificar nada debajo de esta línea
 // --------------------------------
@@ -103,5 +105,5 @@ module.exports = {
   agregarStringInvertida,
   crearInstanciaPersona,
   agregarMetodo, 
-  Persona,
-  };
+  Persona
+}
