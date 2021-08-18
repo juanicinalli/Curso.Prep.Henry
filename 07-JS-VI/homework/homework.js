@@ -26,18 +26,19 @@ function sumarArray(numeros, cb) {
   // Pasa el resultado a `cb`
   // No es necesario devolver nada
   //Tu código:
-  var suma = 0;
-  for(var i = 0; i < numeros.length; i++) {
-  suma = suma + numeros[i];
-  }
-  cb(suma);
+  var sumaReduce = numeros.reduce(function(acumulador, numeros) {
+    return acumulador + numeros;
+  }, 0);
+  
+  cb(sumaReduce);
 }
+
 
 function forEach(array, cb) {
   // Itera sobre la matriz "array" y pasa los valores al callback uno por uno
   // Pista: Estarás invocando a `cb` varias veces (una por cada valor en la matriz)
   //Tu código:
-  array.forEach(function(element, index){
+  array.forEach(function(element){
   cb(element);
   })
 }
